@@ -1,0 +1,8 @@
+<% post.comments.each do |comment| %>
+  <div>
+    <strong><%= comment.user.email %></strong>
+    <br>
+    <p><%= comment.body %></p>
+
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-info text-light float-right' %>
+
+<div class="user_posts">
+  <%= render 'posts/posts_list', posts: @posts %>
+</div>
+
+<br>

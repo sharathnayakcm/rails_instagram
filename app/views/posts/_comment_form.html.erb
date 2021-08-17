@@ -1,0 +1,7 @@
+<%= form_with(url: post_comments_path(id: post.id),local: false) do |f| %>
+  <div class="form-group">
+    <%= f.label 'New comment' %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
