@@ -8,13 +8,9 @@ class PostsController < ApplicationController
 
   def user_posts
     # finding all the posts
-    post_ids = Like.user_liked_posts(params[:id])
-    # Bad Code need to refactor need to find way to add 3 table like nested models
-    @posts = []
-    post_ids.each do |post|
-      @posts << Post.find(post.post_id)
-    end
-
+    @user = User.find(params[:id])
+    # getting all the post which user has liked
+    @posts = @user.liked_posts
     render "index"
   end
 

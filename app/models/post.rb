@@ -7,8 +7,6 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
-  #validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
-
   validates :image, presence: true
 
   validate :image_content_type
@@ -17,8 +15,6 @@ class Post < ApplicationRecord
   def has_liked?(user_id)
     self.likes.where(user_id:user_id).count.positive?
   end
-
-
 
   def likes_count
     self.likes.count
